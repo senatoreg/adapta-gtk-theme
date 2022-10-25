@@ -26,8 +26,8 @@ fi
 
 # Renderer
 render-non-scale() {
-    $INKSCAPE --export-dpi="$non_scale_dpi" \
-              --export-png=$ASSETS_DIR/$i.png $SRC_DIR/$i.svg >/dev/null \
+    $INKSCAPE --export-dpi="$non_scale_dpi" --export-type=png \
+              --export-filename=$ASSETS_DIR/$i.png $SRC_DIR/$i.svg >/dev/null \
                                                               2>>../inkscape.log
 }
 

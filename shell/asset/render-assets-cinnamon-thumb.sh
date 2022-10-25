@@ -48,11 +48,11 @@ fi
 
 # Renderer
 render-non-scale() {
-    $INKSCAPE --export-dpi="$non_scale_dpi" \
-              --export-png=$ASSETS_DIR/$THUMB.png $SRC_DIR/$THUMB.svg >/dev/null \
+    $INKSCAPE --export-dpi="$non_scale_dpi" --export-type=png \
+              --export-filename=$ASSETS_DIR/$THUMB.png $SRC_DIR/$THUMB.svg >/dev/null \
                                                                       2>>inkscape.log
-    $INKSCAPE --export-dpi="$non_scale_dpi" \
-              --export-png=$ASSETS_DARK_DIR/$THUMB.png $SRC_DARK_DIR/$THUMB.svg >/dev/null \
+    $INKSCAPE --export-dpi="$non_scale_dpi" --export-type=png \
+              --export-filename=$ASSETS_DARK_DIR/$THUMB.png $SRC_DARK_DIR/$THUMB.svg >/dev/null \
                                                                                 2>>inkscape.log
 }
 
