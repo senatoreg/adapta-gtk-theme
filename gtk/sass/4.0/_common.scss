@@ -719,7 +719,7 @@ button {
   }
 
   separator { // remove vertical separator
-    @extend separator.wide;
+    @extend separator, .wide;
     min-height: 0;
     min-width: 0;
     border-color: transparent;
@@ -5306,7 +5306,7 @@ stacksidebar {
   // remove unwanted separator
   separator,
   .separator {
-    @extend separator.wide;
+    @extend separator, .wide;
     min-height: 0;
     border-color: transparent;
     background-color: transparent;

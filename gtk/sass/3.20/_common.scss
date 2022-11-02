@@ -718,7 +718,7 @@ button {
 
   separator,
   .separator { // remove vertical separator
-    @extend separator.wide;
+    @extend separator, .wide;
     min-height: 0;
     min-width: 0;
     border-color: transparent;
@@ -1190,7 +1190,7 @@ link {
 }
 
 button.flat.link { // specificity bump with .flat class
-  @extend *:link;
+  @extend *, :link;
 
   > label {
     color: inherit;
@@ -5385,7 +5385,7 @@ stacksidebar {
   // remove unwanted separator
   separator,
   .separator {
-    @extend separator.wide;
+    @extend separator, .wide;
     min-height: 0;
     border-color: transparent;
     background-color: transparent;

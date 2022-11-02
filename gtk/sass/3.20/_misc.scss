@@ -1062,7 +1062,7 @@ window.background {
 
 .gedit-bottom-panel-paned {
   .gedit-search-slider {
-    @extend toolbar.osd;
+    @extend toolbar, .osd;
     padding: 3px;
     border-width: 11px;
     @if $variant == light {
@@ -2023,7 +2023,7 @@ window > popover > stack > grid > button {
 .background.csd > box.vertical > stack > box.vertical > widget {
   notebook > stack > notebook > stack > box.vertical {
     // use buttonbox's flat-buttons
-    > box.horizontal { @extend buttonbox.dialog-action-area; }
+    > box.horizontal { @extend buttonbox, .dialog-action-area; }
   }
 }
 

@@ -1998,7 +1998,7 @@ window.background.lightdm {
 //  ********/
 
 .nemo-desktop.nemo-canvas-item {
-  @extend .nautilus-desktop.nautilus-canvas-item;
+  @extend .nautilus-desktop, .nautilus-canvas-item;
 }
 
 .nemo {
@@ -3069,7 +3069,7 @@ PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
 }
 
 .caja-desktop { // desktop icon-grid styling
-  &.caja-canvas-item { @extend .nautilus-desktop.nautilus-canvas-item; }
+  &.caja-canvas-item { @extend .nautilus-desktop, .nautilus-canvas-item; }
 
   > widget.entry { // = EelEditableLabel.entry
     &, &:focus {
