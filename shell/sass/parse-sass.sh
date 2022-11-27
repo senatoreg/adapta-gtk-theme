@@ -14,7 +14,7 @@
 # Generate CSSs #
 #################
 
-SASSC="`command -v sassc` -M -t compact"
+SASSC="`command -v npx` sass"
 PKG_CONFIG="`command -v pkg-config`"
 
 # Gnome-Shell

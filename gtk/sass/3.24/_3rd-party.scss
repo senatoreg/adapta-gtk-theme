@@ -699,7 +699,7 @@ $switcher_height: $widget_size - if($ref_weight < 1.0, 10.7px, 5.3px);
     box-shadow: none;
 
     button.flat.image-button {
-      min-width: rem($switcher_width, $sw: 1.0) * 2  / 3;
+      min-width: calc(rem($switcher_width, $sw: 1.0) * 2  / 3);
       min-height: rem($switcher_height + 1px, $sw: 1.0);
       margin: -($raven_box_spacing + 1px); // vertically gapless placement
       padding: 0;
@@ -1254,8 +1254,8 @@ window.budgie-popover.workspace-popover {
     }
 
     image {
-      padding: ($requested_width - $icon_size * ($max_children_per_line + 1))
-               / ($max_children_per_line * 2)
+      padding: calc(($requested_width - $icon_size * ($max_children_per_line + 1))
+               / ($max_children_per_line * 2))
                0;
     }
   }
@@ -1724,7 +1724,7 @@ window.background.budgie-settings-window.csd {
 %greeter_entry {
   // prevent junmping when showing CapsLock warning
   min-height: rem($widget_size);
-  padding: 0 if($ref_weight < 1.0, 4px / 2, 8px / 2);
+  padding: 0 if($ref_weight < 1.0, calc(4px / 2), calc(8px / 2));
   font-family: monospace;
 
   &,
@@ -1887,8 +1887,8 @@ window.background.lightdm {
   // top-panel
   menubar {  // broken
     @extend %greeter_panel_menubar;
-    padding-top: ($greeter_panel_height - $greeter_panel_shadow - $icon_size)
-                 / 2;
+    padding-top: calc(($greeter_panel_height - $greeter_panel_shadow - $icon_size)
+                 / 2);
     font-weight: 700;
     text-shadow: none;
 
@@ -2501,7 +2501,7 @@ window.background > paned.titlebar > headerbar.titlebar {
       min-width: $icon_size - 2px;
       min-height: $icon_size - 2px;
       margin: rem(5.3px + 2px) 0;
-      padding: 0 rem(($widget_size - $icon_size - 2px) / 2);
+      padding: 0 rem(calc(($widget_size - $icon_size - 2px) / 2));
     }
   }
 }
@@ -2545,8 +2545,8 @@ revealer > widget > headerbar.imageOverlay.titlebar {
     min-width: $icon_size * 1.5;
     min-height: $icon_size * 1.5;
     padding: if($ref_weight < 1.0,
-             rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-             rem(($widget_size - $icon_size * 1.5) / 2));
+             rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+             rem(calc(($widget_size - $icon_size * 1.5) / 2)));
   }
 }
 
@@ -2699,8 +2699,8 @@ window.background:not(.solid-csd) > box.vertical {
 #MozillaGtkWidget.background {
   headerbar.titlebar { // >= nightly 60.0a1(2018-02-02)
     // FIXME: no backdrop state, no maximized state, bullshit...
-    padding: 0 if($ref_weight < 1.0, (28px - $icon_size * 1.25) / 2,
-                                     (28px - $icon_size * 1.5) / 2);
+    padding: 0 if($ref_weight < 1.0, calc((28px - $icon_size * 1.25) / 2),
+                                     calc((28px - $icon_size * 1.5) / 2));
 
     &.default-decoration button.titlebutton {
       @extend %browser_csd_titlebutton;
@@ -3773,8 +3773,8 @@ window.background.chromium {
 headerbar > box.horizontal.linked {
   > button.toggle.session-sidebar-button { // left-most revealer button
     min-height: $icon_size;
-    padding-top: rem(($widget_size - $icon_size - 2.7px) / 2);
-    padding-bottom: rem(($widget_size - $icon_size - 2.7px) / 2);
+    padding-top: rem(calc(($widget_size - $icon_size - 2.7px) / 2));
+    padding-bottom: rem(calc(($widget_size - $icon_size - 2.7px) / 2));
     border-radius: 2px;
     -gtk-outline-radius: 2px;
     font-weight: 700;
@@ -3804,8 +3804,8 @@ headerbar > box.horizontal.linked {
     > widget > box > image { // add actual lateral spacing
       min-width: $icon_size * 1.5 - 2px * 2;
       padding: if($ref_weight < 1.0,
-               0 rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-               0 rem(($widget_size - $icon_size * 1.5) / 2));
+               0 rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+               0 rem(calc(($widget_size - $icon_size * 1.5) / 2)));
     }
   }
 }
@@ -4045,7 +4045,7 @@ button.flat.-panel-icon-button {
 
   > image {
     background-image: image($selected_bg_color);
-    background-size: (6px / 1.1) 2px; // 1:1.1 aspect deformation exists
+    background-size: (calc(6px / 1.1)) 2px; // 1:1.1 aspect deformation exists
     background-position: bottom center;
   }
 
@@ -4057,7 +4057,7 @@ button.flat.-panel-icon-button {
 
   box.vertical & {
     > image {
-      background-size: 2px (6px / 1.1);
+      background-size: 2px (calc(6px / 1.1));
       background-position: left center;
     }
 

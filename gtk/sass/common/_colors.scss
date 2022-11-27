@@ -155,7 +155,7 @@ $outline_track_color: gtkalpha(currentColor, 0.2);
 $borders_color: if($variant == light, gtkopacity(#000000, 0.09),
                                       gtkopacity(#000000, 0.13));
 $solid_light_borders_color: if($variant == light, #E5E9EC, #212B30);
-$solid_dark_borders_color: mix($inverted_dark_color, #000000, 0.06);
+$solid_dark_borders_color: mix($inverted_dark_color, #000000, 6%);
 $top_edge_borders_color: $inverted_base_color;
 $paned_borders_color: if($variant == light, gtkopacity(#000000, 0.05),
                                             gtkopacity(#000000, 0.07));

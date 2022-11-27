@@ -689,8 +689,8 @@ button {
       min-height: $icon_size * 1.5;
       min-width: $icon_size * 1.5;
       padding: if($ref_weight < 1.0,
-               rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-               rem(($widget_size - $icon_size * 1.5) / 2));
+               rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+               rem(calc(($widget_size - $icon_size * 1.5) / 2)));
       border-radius: 9999px;
       -gtk-outline-radius: 9999px;
 
@@ -1031,7 +1031,7 @@ button {
 }
 
 %image_button {
-  padding: rem(($widget_size - $icon_size) / 2);
+  padding: rem(calc(($widget_size - $icon_size) / 2));
   border-radius: 100px;
   -gtk-outline-radius: 100px;
 }
@@ -1314,7 +1314,7 @@ spinbutton {
       @extend %button_flat_normal;
       min-width: rem($icon_size);
       min-height: rem($icon_size);
-      padding: rem(($widget_size - 4px - 13.3px) / 2);
+      padding: rem(calc(($widget_size - 4px - 13.3px) / 2));
       border-radius: 100px;
       -gtk-outline-radius: 100px;
       background: none;
@@ -1656,9 +1656,9 @@ combobox {
 //  ************/
 
 %toolitem_size {
-  min-width: rem(30px / 2, $sw: 1.0);
+  min-width: rem(calc(30px / 2), $sw: 1.0);
   min-height: rem(30px, $sw: 1.0);
-  padding: 0 rem(30px / 4, $sw: 1.0);
+  padding: 0 rem(calc(30px / 4), $sw: 1.0);
 }
 
 toolbar {
@@ -2131,8 +2131,8 @@ headerbar {
     &,
     &.toggle {
       min-height: $icon_size;
-      padding-top: rem(($widget_size - $icon_size - 4px) / 2);
-      padding-bottom: rem(($widget_size - $icon_size - 1.3px) / 2);
+      padding-top: rem(calc(($widget_size - $icon_size - 4px) / 2));
+      padding-bottom: rem(calc(($widget_size - $icon_size - 1.3px) / 2));
 
       // prepare for tall and dense fonts
       label { margin: rem(-2px) 0; }
@@ -2140,11 +2140,11 @@ headerbar {
       dialog.background & { // modal-dialogs
         min-height: $icon_size * 1.5;
         padding-top: if($ref_weight < 1.0,
-                     rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-                     rem(($widget_size - $icon_size * 1.5) / 2));
+                     rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+                     rem(calc(($widget_size - $icon_size * 1.5) / 2)));
         padding-bottom: if($ref_weight < 1.0,
-                        rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-                        rem(($widget_size - $icon_size * 1.5) / 2));
+                        rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+                        rem(calc(($widget_size - $icon_size * 1.5) / 2)));
       }
     }
 
@@ -2152,17 +2152,17 @@ headerbar {
     &.destructive-action:not(.image-button) {
       min-height: $icon_size * 1.5;
       padding-top: if($ref_weight < 1.0,
-                   rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-                   rem(($widget_size - $icon_size * 1.5) / 2));
+                   rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+                   rem(calc(($widget_size - $icon_size * 1.5) / 2)));
       padding-bottom: if($ref_weight < 1.0,
-                      rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-                      rem(($widget_size - $icon_size * 1.5) / 2));
+                      rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+                      rem(calc(($widget_size - $icon_size * 1.5) / 2)));
     }
 
     &.lock {
       min-height: $icon_size;
-      padding-top: rem(($widget_size - $icon_size - 2.7px) / 2);
-      padding-bottom: rem(($widget_size - $icon_size - 2.7px) / 2);
+      padding-top: rem(calc(($widget_size - $icon_size - 2.7px) / 2));
+      padding-bottom: rem(calc(($widget_size - $icon_size - 2.7px) / 2));
 
       label { margin: rem(-2px) 0; }
     }
@@ -2170,8 +2170,8 @@ headerbar {
 
   button.text-button.image-button {
     min-height: $icon_size;
-    padding-top: rem(($widget_size - $icon_size - 2.7px) / 2);
-    padding-bottom: rem(($widget_size - $icon_size - 2.7px) / 2);
+    padding-top: rem(calc(($widget_size - $icon_size - 2.7px) / 2));
+    padding-bottom: rem(calc(($widget_size - $icon_size - 2.7px) / 2));
 
     label { margin: rem(-2px) 0; }
   }
@@ -2182,8 +2182,8 @@ headerbar {
     min-width: $icon_size * 1.5;
     min-height: $icon_size * 1.5;
     padding: if($ref_weight < 1.0,
-             rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-             rem(($widget_size - $icon_size * 1.5) / 2));
+             rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+             rem(calc(($widget_size - $icon_size * 1.5) / 2)));
   }
 
   .linked > button {
@@ -2191,8 +2191,8 @@ headerbar {
       min-width: $icon_size * 1.5;
       min-height: $icon_size * 1.5;
       padding: if($ref_weight < 1.0,
-               rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-               rem(($widget_size - $icon_size * 1.5) / 2));
+               rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+               rem(calc(($widget_size - $icon_size * 1.5) / 2)));
     }
   }
 
@@ -2201,15 +2201,15 @@ headerbar {
     min-width: $icon_size * 1.5;
     min-height: $icon_size * 1.5;
     padding: if($ref_weight < 1.0,
-             rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-             rem(($widget_size - $icon_size * 1.5) / 2));
+             rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+             rem(calc(($widget_size - $icon_size * 1.5) / 2)));
   }
 
   stackswitcher button:not(.image-button),
   .stack-switcher > button:not(.image-button) {
     min-height: $icon_size;
-    padding-top: rem(($widget_size - $icon_size - 5.3px) / 2);
-    padding-bottom: rem(($widget_size - $icon_size - 2.7px) / 2);
+    padding-top: rem(calc(($widget_size - $icon_size - 5.3px) / 2));
+    padding-bottom: rem(calc(($widget_size - $icon_size - 2.7px) / 2));
 
     label { margin: rem(-2px) 0; }
 
@@ -2257,8 +2257,8 @@ headerbar {
   .linked > entry,
   .linked.raised > entry {
     min-height: $icon_size;
-    padding-top: rem(($widget_size - $icon_size - 5px) / 2);
-    padding-bottom: rem(($widget_size - $icon_size - 2.3px) / 2);
+    padding-top: rem(calc(($widget_size - $icon_size - 5px) / 2));
+    padding-bottom: rem(calc(($widget_size - $icon_size - 2.3px) / 2));
   }
 
   .background & { // bump with .background class to override
@@ -2280,14 +2280,14 @@ headerbar {
   .linked > combobox {
     > entry.combo {
       min-height: $icon_size;
-      padding-top: rem(($widget_size - $icon_size - 5px) / 2);
-      padding-bottom: rem(($widget_size - $icon_size - 2.3px) / 2);
+      padding-top: rem(calc(($widget_size - $icon_size - 5px) / 2));
+      padding-bottom: rem(calc(($widget_size - $icon_size - 2.3px) / 2));
     }
 
     > button.combo {
       min-height: $icon_size;
-      padding-top: rem(($widget_size - $icon_size - 5px) / 2);
-      padding-bottom: rem(($widget_size - $icon_size - 2.3px) / 2);
+      padding-top: rem(calc(($widget_size - $icon_size - 5px) / 2));
+      padding-bottom: rem(calc(($widget_size - $icon_size - 2.3px) / 2));
       color: $inverted_secondary_fg_color;
       &:hover { color: $inverted_fg_color; }
       &:checked {
@@ -2336,11 +2336,11 @@ headerbar {
   radiobutton.text-button {
     min-height: $icon_size * 1.5;
     padding-top: if($ref_weight < 1.0,
-                 rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-                 rem(($widget_size - $icon_size * 1.5) / 2));
+                 rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+                 rem(calc(($widget_size - $icon_size * 1.5) / 2)));
     padding-bottom: if($ref_weight < 1.0,
-                    rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-                    rem(($widget_size - $icon_size * 1.5) / 2));
+                    rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+                    rem(calc(($widget_size - $icon_size * 1.5) / 2)));
     color: $inverted_secondary_fg_color;
     &:hover,
     &:active,
@@ -2540,8 +2540,8 @@ headerbar {
       &.flat.selection-menu,
       &.selection-menu.toggle.popup {
         min-height: $icon_size;
-        padding-top: rem(($widget_size - $icon_size - 2.7px) / 2);
-        padding-bottom: rem(($widget_size - $icon_size - 2.7px) / 2);
+        padding-top: rem(calc(($widget_size - $icon_size - 2.7px) / 2));
+        padding-bottom: rem(calc(($widget_size - $icon_size - 2.7px) / 2));
         border-radius: 2px;
         -gtk-outline-radius: 2px;
 
@@ -3630,12 +3630,12 @@ $slider_min_length: if($ref_weight < 1.0, rem(24px, $sw: 1.0),
                                           rem(32px, $sw: 1.0));
 
 @keyframes slow_down_vert {
-  from {min-width: $slider_min_width / 2; }
+  from {min-width: calc($slider_min_width / 2); }
   to { min-width: $slider_min_width; }
 }
 
 @keyframes slow_down_horz {
-  from {min-height: $slider_min_width / 2; }
+  from {min-height: calc($slider_min_width / 2); }
   to { min-height: $slider_min_width; }
 }
 
@@ -3721,8 +3721,8 @@ scrollbar {
 
       // slider and button sizing
       @each $_position,$_min_w,$_min_l,$_button_s in
-      ('vertical', $slider_min_width / 2, $slider_min_length, 'min-width'),
-      ('horizontal', $slider_min_length, $slider_min_width / 2, 'min-height') {
+      ('vertical', calc($slider_min_width / 2), $slider_min_length, 'min-width'),
+      ('horizontal', $slider_min_length, calc($slider_min_width / 2), 'min-height') {
         &.#{$_position} {
           slider {
             min-width: #{$_min_w};
@@ -4347,24 +4347,24 @@ scale {
     outline-width: 0;
   }
 
-  min-height: $scale_slider_size / 2;
-  min-width: $scale_slider_size / 2;
-  padding: ($scale_slider_size / 2) - $scale_trough_size;
+  min-height: calc($scale_slider_size / 2);
+  min-width: calc($scale_slider_size / 2);
+  padding: (calc($scale_slider_size / 2)) - $scale_trough_size;
 
   &.fine-tune {
     // remove ugly outlines
     outline-offset: 0;
     outline-width: 0;
     &.horizontal {
-      min-height: $scale_slider_size / 2;
-      padding-top: ($scale_slider_size / 2) - $scale_trough_size;
-      padding-bottom: ($scale_slider_size / 2) - $scale_trough_size;
+      min-height: calc($scale_slider_size / 2);
+      padding-top: (calc($scale_slider_size / 2)) - $scale_trough_size;
+      padding-bottom: (calc($scale_slider_size / 2)) - $scale_trough_size;
     }
 
     &.vertical {
-      min-width: $scale_slider_size / 2;
-      padding-left: ($scale_slider_size / 2) - $scale_trough_size;
-      padding-right: ($scale_slider_size / 2) - $scale_trough_size;
+      min-width: calc($scale_slider_size / 2);
+      padding-left: (calc($scale_slider_size / 2)) - $scale_trough_size;
+      padding-right: (calc($scale_slider_size / 2)) - $scale_trough_size;
     }
 
     highlight,
@@ -4377,7 +4377,7 @@ scale {
   &.fine-tune slider {
     min-height: $scale_slider_size;
     min-width: $scale_slider_size;
-    margin: -(($scale_slider_size - $scale_trough_size) / 2);
+    margin: -(calc(($scale_slider_size - $scale_trough_size) / 2));
 
     &:not(:hover):not(:active) {
       background-size: $scale;
@@ -6057,8 +6057,8 @@ decoration {
     min-width: $icon_size * 1.5;
     min-height: $icon_size * 1.5;
     padding: if($ref_weight < 1.0,
-             rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-             rem(($widget_size - $icon_size * 1.5) / 2));
+             rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+             rem(calc(($widget_size - $icon_size * 1.5) / 2)));
     border-radius: 100px;
     -gtk-outline-radius: 100px;
 
@@ -6490,9 +6490,9 @@ cursor-handle {
 .keycap {
   min-width: rem(20px, $sw: 1.0);
   min-height: rem(20px, $sw: 1.0);
-  padding: rem((20px - 13.3px + 1.3px) / 2, $sw: 1.0)
-           rem((20px - 13.3px) / 2, $sw: 1.0)
-           rem((20px - 13.3px - 1.3px) / 2, $sw: 1.0);
+  padding: rem(calc((20px - 13.3px + 1.3px) / 2), $sw: 1.0)
+           rem(calc((20px - 13.3px) / 2), $sw: 1.0)
+           rem(calc((20px - 13.3px - 1.3px) / 2), $sw: 1.0);
   border: none;
   border-radius: 2px;
   color: $inverted_fg_color;

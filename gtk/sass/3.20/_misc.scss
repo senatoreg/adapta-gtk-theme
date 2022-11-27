@@ -518,16 +518,16 @@ dialog.background.csd > box.dialog-vbox > grid.horizontal {
       min-width: $icon_size * 1.5;
       margin: rem(5.3px) 0;
       padding: if($ref_weight < 1.0,
-               rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-               rem(($widget_size - $icon_size * 1.5) / 2));
+               rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+               rem(calc(($widget_size - $icon_size * 1.5) / 2)));
     }
 
     // 'archive' button
     &:not(.image-button):not(.text-button):not(.suggested-action) {
       min-height: $icon_size;
       margin: rem(5.3px) 0;
-      padding-top: rem(($widget_size - $icon_size - 2.7px) / 2);
-      padding-bottom: rem(($widget_size - $icon_size - 2.7px) / 2);
+      padding-top: rem(calc(($widget_size - $icon_size - 2.7px) / 2));
+      padding-bottom: rem(calc(($widget_size - $icon_size - 2.7px) / 2));
       border-radius: 2px;
       -gtk-outline-radius: 2px;
 
@@ -544,8 +544,8 @@ dialog.background.csd > box.dialog-vbox > grid.horizontal {
   > button.suggested-action { // 'send' button
     min-height: $icon_size;
     margin: rem(5.3px) 0;
-    padding-top: rem(($widget_size - $icon_size - 2.7px) / 2);
-    padding-bottom: rem(($widget_size - $icon_size - 2.7px) / 2);
+    padding-top: rem(calc(($widget_size - $icon_size - 2.7px) / 2));
+    padding-bottom: rem(calc(($widget_size - $icon_size - 2.7px) / 2));
 
     label {
       margin: rem(-2px) 0;
@@ -557,15 +557,15 @@ dialog.background.csd > box.dialog-vbox > grid.horizontal {
     button.image-button:not(.text-button):not(.titlebutton) {
       margin: rem(5.3px) 0;
       padding: if($ref_weight < 1.0,
-               rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-               rem(($widget_size - $icon_size * 1.5) / 2));
+               rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+               rem(calc(($widget_size - $icon_size * 1.5) / 2)));
     }
   }
 
   button.suggested-action { // 'send' button
     min-height: $icon_size;
-    padding-top: rem(($widget_size - $icon_size - 2.7px) / 2);
-    padding-bottom: rem(($widget_size - $icon_size - 2.7px) / 2);
+    padding-top: rem(calc(($widget_size - $icon_size - 2.7px) / 2));
+    padding-bottom: rem(calc(($widget_size - $icon_size - 2.7px) / 2));
 
     label { margin: rem(-2px) 0; }
   }
@@ -573,8 +573,8 @@ dialog.background.csd > box.dialog-vbox > grid.horizontal {
   button.image-button.popup.toggle { // 'gear' button
     margin: rem(5.3px) 0;
     padding: if($ref_weight < 1.0,
-             rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-             rem(($widget_size - $icon_size * 1.5) / 2));
+             rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+             rem(calc(($widget_size - $icon_size * 1.5) / 2)));
   }
 }
 
@@ -951,8 +951,8 @@ headerbar.titlebar > box.horizontal > box.horizontal {
     min-width: $icon_size * 1.5;
     min-height: $icon_size * 1.5;
     padding: if($ref_weight < 1.0,
-             rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-             rem(($widget_size - $icon_size * 1.5) / 2));
+             rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+             rem(calc(($widget_size - $icon_size * 1.5) / 2)));
   }
 }
 
@@ -1154,11 +1154,11 @@ paned.titlebar.horizontal {
     button.flat.toggle.popup:not(.image-button) { // left-pane header button
       min-height: $icon_size * 1.5;
       padding-top: if($ref_weight < 1.0,
-                   rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-                   rem(($widget_size - $icon_size * 1.5) / 2));
+                   rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+                   rem(calc(($widget_size - $icon_size * 1.5) / 2)));
       padding-bottom: if($ref_weight < 1.0,
-                      rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-                      rem(($widget_size - $icon_size * 1.5) / 2));
+                      rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+                      rem(calc(($widget_size - $icon_size * 1.5) / 2)));
       border-radius: 2px;
       -gtk-outline-radius: 2px;
 
@@ -1959,8 +1959,8 @@ window headerbar > box.horizontal:not(.linked) {
         min-width: $icon_size * 1.5;
         min-width: $icon_size * 1.5;
         padding: if($ref_weight < 1.0,
-                 rem(($widget_size - $icon_size * 1.5 - 2px) / 2),
-                 rem(($widget_size - $icon_size * 1.5) / 2));
+                 rem(calc(($widget_size - $icon_size * 1.5 - 2px) / 2)),
+                 rem(calc(($widget_size - $icon_size * 1.5) / 2)));
       }
     }
   }
@@ -1970,7 +1970,7 @@ window headerbar > box.horizontal:not(.linked) {
       // force using square-button
       min-width: $icon_size + 8px;
       min-height: $icon_size;
-      padding: rem(($widget_size - $icon_size - 2.7px) / 2);
+      padding: rem(calc(($widget_size - $icon_size - 2.7px) / 2));
       border-radius: 2px;
       -gtk-outline-radius: 2px;
     }

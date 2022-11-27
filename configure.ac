@@ -52,9 +52,21 @@ if test x"$INKSCAPE" = x; then
 	AC_MSG_ERROR(['inkscape' not found.])
 fi
 
-AC_PATH_TOOL([SASSC], [sassc])
+AC_PATH_TOOL([NPM], [npm])
+if test x"$NPM" = x; then
+        AC_MSG_ERROR(['npm' not found.])
+fi
+
+AC_PATH_TOOL([NPX], [npx])
+if test x"$NPX" = x; then
+        AC_MSG_ERROR(['npx' not found.])
+fi
+
+AC_CHECK_FILE([node_modules/sass/sass.js], [], [npm i --no-save sass])
+
+AC_CHECK_PROG([SASSC], [sass.js], [$NPX sass], [], [node_modules/sass])
 if test x"$SASSC" = x; then
-	AC_MSG_ERROR(['sassc' not found.])
+        AC_MSG_ERROR(['sass' not found.])
 fi
 
 if test x"$ENABLE_PARALLEL" = xyes; then

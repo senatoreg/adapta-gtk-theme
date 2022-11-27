@@ -22,7 +22,7 @@
 $ref_size: 13.33px; // = 10pt = 1em
 
 @function rem($px, $fs: $ref_size, $sw: $ref_weight) {
-  @return round($px / $fs * $sw * 100) / 100 * 1rem;
+  @return calc(round(calc($px / $fs * $sw * 100)) / 100 * 1rem);
 }
 
 
@@ -314,7 +314,7 @@ $slope_quick: cubic-bezier(0.4, 0.0, 0.6, 1.0);
   box-shadow: none;
 }
 
-@mixin entry($t, $c: $fg_color, $fc:$selected_bg_color) {
+@mixin entry($t, $c: $fg_color, $fc:$selected_bg_color, $next:false) {
 //
 // Entries drawing function
 //
@@ -328,7 +328,9 @@ $slope_quick: cubic-bezier(0.4, 0.0, 0.6, 1.0);
 
   @if $t == normal {
     border-radius: 0;
+    @if not $next {
     -gtk-outline-radius: 0;
+    }
     border-color: $solid_light_borders_color;
     border-image: radial-gradient(circle farthest-corner at center,
                                   $outline_track_color 100%,
@@ -357,7 +359,9 @@ $slope_quick: cubic-bezier(0.4, 0.0, 0.6, 1.0);
   }
   @if $t == flat-normal {
     border-radius: 0;
+    @if not $next {
     -gtk-outline-radius: 0;
+   }
     border-color: $solid_light_borders_color;
     border-image: radial-gradient(circle farthest-corner at center,
                                   $outline_track_color 100%,
@@ -386,6 +390,10 @@ $slope_quick: cubic-bezier(0.4, 0.0, 0.6, 1.0);
     background-color: transparent;
     color: gtkopacity($c, 0.28);
   }
+}
+
+@mixin entry_next($t, $c: $fg_color, $fc:$selected_bg_color) {
+  @include entry($t, $c, $fc, $next:true);
 }
 
 

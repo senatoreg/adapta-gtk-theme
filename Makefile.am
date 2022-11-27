@@ -25,3 +25,6 @@ uninstall-hook:
 	test -e $(adaptadir) && rm -rfv $(adaptadir)
 	test -e $(noktetaodir) && rm -rfv $(noktoetadir)
 	test -e $(adaptaetadir) && rm -rfv $(adaptaetadir)
+
+distclean-local:
+	rm -rf node_modules

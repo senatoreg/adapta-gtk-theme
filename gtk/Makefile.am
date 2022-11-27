@@ -456,27 +456,49 @@ gtk2_nokto_spin_file = \
 gtk2_nokto_toolbar_file = \
 	$(gtk2_assetdir)/Toolbar/inline-toolbar-dark.png
 
-gtknextdir   = $(srcdir)/gtk-4.0
-gtknext_file = \
-	$(gtknextdir)/gtk.css \
-	$(gtknextdir)/gtk-dark.css \
-	$(gtknextdir)/gtk.gresource
+gtk40dir   = $(srcdir)/gtk-4.0
+gtk40_file = \
+	$(gtk40dir)/gtk.css \
+	$(gtk40dir)/gtk-dark.css \
+	$(gtk40dir)/gtk.gresource
 
-gtknextetadir   = $(srcdir)/gtk-4.0-eta
-gtknexteta_file = \
-	$(gtknextetadir)/gtk.css \
-	$(gtknextetadir)/gtk-dark.css \
-	$(gtknextetadir)/gtk.gresource
+gtk40etadir   = $(srcdir)/gtk-4.0-eta
+gtk40eta_file = \
+	$(gtk40etadir)/gtk.css \
+	$(gtk40etadir)/gtk-dark.css \
+	$(gtk40etadir)/gtk.gresource
 
-gtknextnoktodir   = $(srcdir)/gtk-4.0-nokto
-gtknextnokto_file = \
-	$(gtknextnoktodir)/gtk.css \
-	$(gtknextnoktodir)/gtk.gresource
+gtk40noktodir   = $(srcdir)/gtk-4.0-nokto
+gtk40nokto_file = \
+	$(gtk40noktodir)/gtk.css \
+	$(gtk40noktodir)/gtk.gresource
 
-gtknextnoktoetadir   = $(srcdir)/gtk-4.0-nokto-eta
-gtknextnoktoeta_file = \
-	$(gtknextnoktoetadir)/gtk.css \
-	$(gtknextnoktoetadir)/gtk.gresource
+gtk40noktoetadir   = $(srcdir)/gtk-4.0-nokto-eta
+gtk40noktoeta_file = \
+	$(gtk40noktoetadir)/gtk.css \
+	$(gtk40noktoetadir)/gtk.gresource
+
+gtk48dir   = $(srcdir)/gtk-4.8
+gtk48_file = \
+	$(gtk48dir)/gtk.css \
+	$(gtk48dir)/gtk-dark.css \
+	$(gtk48dir)/gtk.gresource
+
+gtk48etadir   = $(srcdir)/gtk-4.8-eta
+gtk48eta_file = \
+	$(gtk48etadir)/gtk.css \
+	$(gtk48etadir)/gtk-dark.css \
+	$(gtk48etadir)/gtk.gresource
+
+gtk48noktodir   = $(srcdir)/gtk-4.8-nokto
+gtk48nokto_file = \
+	$(gtk48noktodir)/gtk.css \
+	$(gtk48noktodir)/gtk.gresource
+
+gtk48noktoetadir   = $(srcdir)/gtk-4.8-nokto-eta
+gtk48noktoeta_file = \
+	$(gtk48noktoetadir)/gtk.css \
+	$(gtk48noktoetadir)/gtk.gresource
 
 xfcenotifydir   = $(srcdir)/xfce-notify-4.0
 xfcenotify_file = \
@@ -487,7 +509,7 @@ index_nokto_file    = $(srcdir)/index.theme-nokto
 indexeta_file       = $(srcdir)/index.theme-eta
 index_noktoeta_file = $(srcdir)/index.theme-nokto-eta
 
-sassc_option = -M -t compact
+sassc_option = 
 parallel_option = --null --no-notice --line-buffer --jobs 100%
 
 # *******************************************
@@ -816,17 +838,30 @@ install-data-local:
 
 if ENABLE_GTK_NEXT
 	$(MKDIR_P) $(adaptadir)/gtk-4.0
-	cp -Rv $(gtknext_file) $(adaptadir)/gtk-4.0
+	cp -Rv $(gtk40_file) $(adaptadir)/gtk-4.0
 	cp -Rv $(gtk3_thumb_file) $(adaptadir)/gtk-4.0
 	$(MKDIR_P) $(adaptaetadir)/gtk-4.0
-	cp -Rv $(gtknexteta_file) $(adaptaetadir)/gtk-4.0
+	cp -Rv $(gtk40eta_file) $(adaptaetadir)/gtk-4.0
 	cp -Rv $(gtk3_thumb_file) $(adaptaetadir)/gtk-4.0
 	$(MKDIR_P) $(noktodir)/gtk-4.0
-	cp -Rv $(gtknextnokto_file) $(noktodir)/gtk-4.0
+	cp -Rv $(gtk40nokto_file) $(noktodir)/gtk-4.0
 	cp -Rv $(gtk3_darkthumb_file) $(noktodir)/gtk-4.0/thumbnail.png
 	$(MKDIR_P) $(noktoetadir)/gtk-4.0
-	cp -Rv $(gtknextnoktoeta_file) $(noktoetadir)/gtk-4.0
+	cp -Rv $(gtk40noktoeta_file) $(noktoetadir)/gtk-4.0
 	cp -Rv $(gtk3_darkthumb_file) $(noktoetadir)/gtk-4.0/thumbnail.png
+
+	$(MKDIR_P) $(adaptadir)/gtk-4.8
+	cp -Rv $(gtk48_file) $(adaptadir)/gtk-4.8
+	cp -Rv $(gtk3_thumb_file) $(adaptadir)/gtk-4.8
+	$(MKDIR_P) $(adaptaetadir)/gtk-4.8
+	cp -Rv $(gtk48eta_file) $(adaptaetadir)/gtk-4.8
+	cp -Rv $(gtk3_thumb_file) $(adaptaetadir)/gtk-4.8
+	$(MKDIR_P) $(noktodir)/gtk-4.8
+	cp -Rv $(gtk48nokto_file) $(noktodir)/gtk-4.8
+	cp -Rv $(gtk3_darkthumb_file) $(noktodir)/gtk-4.8/thumbnail.png
+	$(MKDIR_P) $(noktoetadir)/gtk-4.8
+	cp -Rv $(gtk48noktoeta_file) $(noktoetadir)/gtk-4.8
+	cp -Rv $(gtk3_darkthumb_file) $(noktoetadir)/gtk-4.8/thumbnail.png
 endif
 
 if ENABLE_XFCE
@@ -869,6 +904,12 @@ if ENABLE_GTK_NEXT
 
 	test -e $(noktoetadir)/gtk-4.0 && rm -rfv $(noktoetadir)/gtk-4.0
 	test -e $(adaptaetadir)/gtk-4.0 && rm -rfv $(adaptaetadir)/gtk-4.0
+
+	test -e $(noktodir)/gtk-4.8 && rm -rfv $(noktodir)/gtk-4.8
+	test -e $(adaptadir)/gtk-4.8 && rm -rfv $(adaptadir)/gtk-4.8
+
+	test -e $(noktoetadir)/gtk-4.8 && rm -rfv $(noktoetadir)/gtk-4.8
+	test -e $(adaptaetadir)/gtk-4.8 && rm -rfv $(adaptaetadir)/gtk-4.8
 endif
 
 if ENABLE_XFCE
@@ -956,7 +997,23 @@ CLEANFILES += \
 	$(srcdir)/gtk-4.0-nokto/gtk.gresource \
 	$(srcdir)/gtk-4.0-nokto-eta/gtk.css \
 	$(srcdir)/gtk-4.0-nokto-eta/gtk-contained-dark.css \
-	$(srcdir)/gtk-4.0-nokto-eta/gtk.gresource
+	$(srcdir)/gtk-4.0-nokto-eta/gtk.gresource \
+	$(srcdir)/gtk-4.8/gtk.css \
+	$(srcdir)/gtk-4.8/gtk-dark.css \
+	$(srcdir)/gtk-4.8/gtk-contained.css \
+	$(srcdir)/gtk-4.8/gtk-contained-dark.css \
+	$(srcdir)/gtk-4.8/gtk.gresource \
+	$(srcdir)/gtk-4.8-eta/gtk.css \
+	$(srcdir)/gtk-4.8-eta/gtk-dark.css \
+	$(srcdir)/gtk-4.8-eta/gtk-contained.css \
+	$(srcdir)/gtk-4.8-eta/gtk-contained-dark.css \
+	$(srcdir)/gtk-4.8-eta/gtk.gresource \
+	$(srcdir)/gtk-4.8-nokto/gtk.css \
+	$(srcdir)/gtk-4.8-nokto/gtk-contained-dark.css \
+	$(srcdir)/gtk-4.8-nokto/gtk.gresource \
+	$(srcdir)/gtk-4.8-nokto-eta/gtk.css \
+	$(srcdir)/gtk-4.8-nokto-eta/gtk-contained-dark.css \
+	$(srcdir)/gtk-4.8-nokto-eta/gtk.gresource
 endif
 
 DISTCLEANFILES = \

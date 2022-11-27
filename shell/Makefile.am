@@ -300,7 +300,7 @@ xfce_image_file = \
 xfce_rc_file = \
 	$(xfcedir)/gtkrc
 
-sassc_option = -M -t compact
+sassc_option = 
 
 # ****************************
 # * Generate CSS stylesheets *
