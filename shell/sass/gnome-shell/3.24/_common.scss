@@ -777,12 +777,12 @@ $extra_spacing: 2.5px;
 .system-switch-user-submenu-icon {
   &.user-icon {
     icon-size: 16px + 4px;
-    padding: 0 ($default_spacing + $extra_spacing - 4px) / 2;
+    padding: 0 calc( ($default_spacing + $extra_spacing - 4px) / 2 );
   }
 
   &.default-icon {
     icon-size: 16px;
-    padding: 0 ($default_spacing + $extra_spacing) / 2;
+    padding: 0 calc( ($default_spacing + $extra_spacing) / 2 );
   }
 }
 
@@ -1851,21 +1851,21 @@ $provider_icon_size: 32px;
 #searchResultsBin { max-width: 1000px; }
 
 #searchResultsContent {
-  spacing: if($eta == false, $provider_icon_size / 2,
-                             $provider_icon_size / 4);
-  padding: if($eta == false, $provider_icon_size / 2,
-                             $provider_icon_size / 4);
+  spacing: if($eta == false, calc( $provider_icon_size / 2 ),
+                             calc( $provider_icon_size / 4 ));
+  padding: if($eta == false, calc( $provider_icon_size / 2 ),
+                             calc( $provider_icon_size / 4 ));
 }
 
  // This should be equal to #searchResultsContent spacing
 .search-section {
-  spacing: if($eta == false, $provider_icon_size / 2,
-                             $provider_icon_size / 4);
+  spacing: if($eta == false, calc( $provider_icon_size / 2,
+                             calc( $provider_icon_size / 4);
 
   // This is the space between the provider icon and the results container
   &-content {
-    spacing: if($eta == false, $provider_icon_size / 2,
-                               $provider_icon_size / 4);
+    spacing: if($eta == false, calc( $provider_icon_size / 2 ),
+                               calc( $provider_icon_size / 4 ));
   }
 
   &-separator {
@@ -1894,8 +1894,8 @@ $provider_icon_size: 32px;
   &-results { spacing: 3px; }
 
   &-result {
-    &:ltr { margin-right: $provider_icon_size / 2; }
-    &:rtl { margin-left: $provider_icon_size / 2; }
+    &:ltr { margin-right: calc( $provider_icon_size / 2 ); }
+    &:rtl { margin-left: calc( $provider_icon_size / 2 ); }
 
     padding: 0;
     transition-duration: 0s;
@@ -1933,10 +1933,10 @@ $provider_icon_size: 32px;
     }
 
     &-content {
-      spacing: if($eta == false, $provider_icon_size / 2,
-                                 $provider_icon_size / 4);
-      padding: if($eta == false, $provider_icon_size / 2,
-                                 $provider_icon_size / 4);
+      spacing: if($eta == false, calc( $provider_icon_size / 2 ),
+                                 calc( $provider_icon_size / 4 ));
+      padding: if($eta == false, calc( $provider_icon_size / 2 ),
+                                 calc( $provider_icon_size / 4 ));
       // concern the rows without 48px icons
       min-height: $provider_icon_size * (1.5 + 0.5);
     }
@@ -1956,8 +1956,8 @@ $provider_icon_size: 32px;
 
 .search-provider {
   &-icon {
-    margin: if($eta == false, $provider_icon_size / 4 0, 0);
-    padding: $provider_icon_size / 2;
+    margin: if($eta == false, calc( $provider_icon_size / 4 ) 0, 0);
+    padding: calc( $provider_icon_size / 2 );
     border: none;
     border-radius: 100px;
     color: $osd_fg_color;
@@ -1979,8 +1979,8 @@ $provider_icon_size: 32px;
   }
 
   &-icon-more {
-    width: $provider_icon_size / 2;
-    height: $provider_icon_size / 2;
+    width: calc( $provider_icon_size / 2 );
+    height: calc( $provider_icon_size / 2 );
     background-image: url("assets/more-results.svg");
     -st-background-image-shadow: $z-depth-2;
   }
