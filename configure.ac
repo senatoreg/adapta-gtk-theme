@@ -62,7 +62,7 @@ if test x"$NPX" = x; then
         AC_MSG_ERROR(['npx' not found.])
 fi
 
-AC_CHECK_FILE([node_modules/sass/sass.js], [], [npm i --no-save sass])
+AC_CHECK_FILE([node_modules/sass/sass.js], [], [npm i])
 
 AC_CHECK_PROG([SASSC], [sass.js], [$NPX sass], [], [node_modules/sass])
 if test x"$SASSC" = x; then

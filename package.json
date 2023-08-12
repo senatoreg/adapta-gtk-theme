@@ -1,0 +1,13 @@
+{
+  "name": "adapta-gtk-theme",
+  "version": "3.95.0",
+  "description": "An adaptive Gtk+ theme based on Material Design Guidelines.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "GPL-2.0-only",
+  "dependencies": {
+    "sass": "^1.64.2"
+  }
+}
