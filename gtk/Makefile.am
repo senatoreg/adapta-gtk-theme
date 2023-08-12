@@ -478,28 +478,6 @@ gtk40noktoeta_file = \
 	$(gtk40noktoetadir)/gtk.css \
 	$(gtk40noktoetadir)/gtk.gresource
 
-gtk48dir   = $(srcdir)/gtk-4.8
-gtk48_file = \
-	$(gtk48dir)/gtk.css \
-	$(gtk48dir)/gtk-dark.css \
-	$(gtk48dir)/gtk.gresource
-
-gtk48etadir   = $(srcdir)/gtk-4.8-eta
-gtk48eta_file = \
-	$(gtk48etadir)/gtk.css \
-	$(gtk48etadir)/gtk-dark.css \
-	$(gtk48etadir)/gtk.gresource
-
-gtk48noktodir   = $(srcdir)/gtk-4.8-nokto
-gtk48nokto_file = \
-	$(gtk48noktodir)/gtk.css \
-	$(gtk48noktodir)/gtk.gresource
-
-gtk48noktoetadir   = $(srcdir)/gtk-4.8-nokto-eta
-gtk48noktoeta_file = \
-	$(gtk48noktoetadir)/gtk.css \
-	$(gtk48noktoetadir)/gtk.gresource
-
 xfcenotifydir   = $(srcdir)/xfce-notify-4.0
 xfcenotify_file = \
 	$(xfcenotifydir)/gtk.css
@@ -849,19 +827,6 @@ if ENABLE_GTK_NEXT
 	$(MKDIR_P) $(noktoetadir)/gtk-4.0
 	cp -Rv $(gtk40noktoeta_file) $(noktoetadir)/gtk-4.0
 	cp -Rv $(gtk3_darkthumb_file) $(noktoetadir)/gtk-4.0/thumbnail.png
-
-	$(MKDIR_P) $(adaptadir)/gtk-4.8
-	cp -Rv $(gtk48_file) $(adaptadir)/gtk-4.8
-	cp -Rv $(gtk3_thumb_file) $(adaptadir)/gtk-4.8
-	$(MKDIR_P) $(adaptaetadir)/gtk-4.8
-	cp -Rv $(gtk48eta_file) $(adaptaetadir)/gtk-4.8
-	cp -Rv $(gtk3_thumb_file) $(adaptaetadir)/gtk-4.8
-	$(MKDIR_P) $(noktodir)/gtk-4.8
-	cp -Rv $(gtk48nokto_file) $(noktodir)/gtk-4.8
-	cp -Rv $(gtk3_darkthumb_file) $(noktodir)/gtk-4.8/thumbnail.png
-	$(MKDIR_P) $(noktoetadir)/gtk-4.8
-	cp -Rv $(gtk48noktoeta_file) $(noktoetadir)/gtk-4.8
-	cp -Rv $(gtk3_darkthumb_file) $(noktoetadir)/gtk-4.8/thumbnail.png
 endif
 
 if ENABLE_XFCE
@@ -904,12 +869,6 @@ if ENABLE_GTK_NEXT
 
 	test -e $(noktoetadir)/gtk-4.0 && rm -rfv $(noktoetadir)/gtk-4.0
 	test -e $(adaptaetadir)/gtk-4.0 && rm -rfv $(adaptaetadir)/gtk-4.0
-
-	test -e $(noktodir)/gtk-4.8 && rm -rfv $(noktodir)/gtk-4.8
-	test -e $(adaptadir)/gtk-4.8 && rm -rfv $(adaptadir)/gtk-4.8
-
-	test -e $(noktoetadir)/gtk-4.8 && rm -rfv $(noktoetadir)/gtk-4.8
-	test -e $(adaptaetadir)/gtk-4.8 && rm -rfv $(adaptaetadir)/gtk-4.8
 endif
 
 if ENABLE_XFCE
@@ -997,23 +956,7 @@ CLEANFILES += \
 	$(srcdir)/gtk-4.0-nokto/gtk.gresource \
 	$(srcdir)/gtk-4.0-nokto-eta/gtk.css \
 	$(srcdir)/gtk-4.0-nokto-eta/gtk-contained-dark.css \
-	$(srcdir)/gtk-4.0-nokto-eta/gtk.gresource \
-	$(srcdir)/gtk-4.8/gtk.css \
-	$(srcdir)/gtk-4.8/gtk-dark.css \
-	$(srcdir)/gtk-4.8/gtk-contained.css \
-	$(srcdir)/gtk-4.8/gtk-contained-dark.css \
-	$(srcdir)/gtk-4.8/gtk.gresource \
-	$(srcdir)/gtk-4.8-eta/gtk.css \
-	$(srcdir)/gtk-4.8-eta/gtk-dark.css \
-	$(srcdir)/gtk-4.8-eta/gtk-contained.css \
-	$(srcdir)/gtk-4.8-eta/gtk-contained-dark.css \
-	$(srcdir)/gtk-4.8-eta/gtk.gresource \
-	$(srcdir)/gtk-4.8-nokto/gtk.css \
-	$(srcdir)/gtk-4.8-nokto/gtk-contained-dark.css \
-	$(srcdir)/gtk-4.8-nokto/gtk.gresource \
-	$(srcdir)/gtk-4.8-nokto-eta/gtk.css \
-	$(srcdir)/gtk-4.8-nokto-eta/gtk-contained-dark.css \
-	$(srcdir)/gtk-4.8-nokto-eta/gtk.gresource
+	$(srcdir)/gtk-4.0-nokto-eta/gtk.gresource
 endif
 
 DISTCLEANFILES = \
