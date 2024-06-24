@@ -8,6 +8,6 @@
   "author": "",
   "license": "GPL-2.0-only",
   "dependencies": {
-    "sass": "^1.64.2"
+    "sass": "^1.77.6"
   }
 }
