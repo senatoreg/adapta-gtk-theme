@@ -25,6 +25,15 @@ usage() {
     sed -rn '/^# Usage/,${/^#/!q;s/^# ?//;p}' "$0"
 }
 
+get_prefix() {
+        if test "$1" = "4.0"
+        then
+            echo ""
+        else
+            echo "resource:///org/adapta-project/gtk-$1$2/"
+        fi
+}
+
 #############
 # Compiling #
 #############
@@ -51,9 +60,10 @@ case "$1" in
         cd ../gtk-"$1" && ln -sf ../asset/assets-gtk3 assets && cd ../sass
         $(command -v glib-compile-resources) --sourcedir=../gtk-"$1" \
                                              ../gtk-"$1"/"$xml"
-        echo '@import url("resource:///org/adapta-project/gtk-'$1'/gtk-contained.css");' \
+        import_prefix=`get_prefix "$1" ""`
+        echo '@import url("'$import_prefix'gtk-contained.css");' \
             > ../gtk-"$1"/gtk.css
-        echo '@import url("resource:///org/adapta-project/gtk-'$1'/gtk-contained-dark.css");' \
+        echo '@import url("'$import_prefix'gtk-contained-dark.css");' \
             > ../gtk-"$1"/gtk-dark.css
 
         rm -f ../gtk-"$1"/"$xml"
@@ -64,9 +74,10 @@ case "$1" in
         cd ../gtk-"$1"-eta && ln -sf ../asset/assets-gtk3 assets && cd ../sass
         $(command -v glib-compile-resources) --sourcedir=../gtk-"$1"-eta \
                                              ../gtk-"$1"-eta/"$xml"
-        echo '@import url("resource:///org/adapta-project/gtk-'$1'-eta/gtk-contained.css");' \
+        import_prefix=`get_prefix "$1" "-eta"`
+        echo '@import url("'$import_prefix'gtk-contained.css");' \
             > ../gtk-"$1"-eta/gtk.css
-        echo '@import url("resource:///org/adapta-project/gtk-'$1'-eta/gtk-contained-dark.css");' \
+        echo '@import url("'$import_prefix'gtk-contained-dark.css");' \
             > ../gtk-"$1"-eta/gtk-dark.css
 
         rm -f ../gtk-"$1"-eta/"$xml"
@@ -77,7 +88,8 @@ case "$1" in
         cd ../gtk-"$1"-nokto && ln -sf ../asset/assets-gtk3 assets && cd ../sass
         $(command -v glib-compile-resources) --sourcedir=../gtk-"$1"-nokto \
                                              ../gtk-"$1"-nokto/"$xml"
-        echo '@import url("resource:///org/adapta-project/gtk-'$1'-nokto/gtk-contained-dark.css");' \
+        import_prefix=`get_prefix "$1" "-nokto"`
+        echo '@import url("'$import_prefix'gtk-contained-dark.css");' \
             > ../gtk-"$1"-nokto/gtk.css
 
         rm -f ../gtk-"$1"-nokto/"$xml"
@@ -88,7 +100,8 @@ case "$1" in
         cd ../gtk-"$1"-nokto-eta && ln -sf ../asset/assets-gtk3 assets && cd ../sass
         $(command -v glib-compile-resources) --sourcedir=../gtk-"$1"-nokto-eta \
                                              ../gtk-"$1"-nokto-eta/"$xml"
-        echo '@import url("resource:///org/adapta-project/gtk-'$1'-nokto-eta/gtk-contained-dark.css");' \
+        import_prefix=`get_prefix "$1" "-nokto-eta"`
+        echo '@import url("'$import_prefix'gtk-contained-dark.css");' \
             > ../gtk-"$1"-nokto-eta/gtk.css
 
         rm -f ../gtk-"$1"-nokto-eta/"$xml"

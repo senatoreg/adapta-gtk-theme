@@ -15,13 +15,17 @@ gtk3_darkthumb_file = \
 gtk320dir   = $(srcdir)/gtk-3.20
 gtk320_file = \
 	$(gtk320dir)/gtk.css \
+	$(gtk320dir)/gtk-contained.css \
 	$(gtk320dir)/gtk-dark.css \
+	$(gtk320dir)/gtk-contained-dark.css \
 	$(gtk320dir)/gtk.gresource
 
 gtk320etadir   = $(srcdir)/gtk-3.20-eta
 gtk320eta_file = \
 	$(gtk320etadir)/gtk.css \
+	$(gtk320etadir)/gtk-contained.css \
 	$(gtk320etadir)/gtk-dark.css \
+	$(gtk320etadir)/gtk-contained-dark.css \
 	$(gtk320etadir)/gtk.gresource
 
 gtk320noktodir   = $(srcdir)/gtk-3.20-nokto
@@ -37,13 +41,17 @@ gtk320noktoeta_file = \
 gtk322dir   = $(srcdir)/gtk-3.22
 gtk322_file = \
 	$(gtk322dir)/gtk.css \
+	$(gtk322dir)/gtk-contained.css \
 	$(gtk322dir)/gtk-dark.css \
+	$(gtk322dir)/gtk-contained-dark.css \
 	$(gtk322dir)/gtk.gresource
 
 gtk322etadir   = $(srcdir)/gtk-3.22-eta
 gtk322eta_file = \
 	$(gtk322etadir)/gtk.css \
+	$(gtk322etadir)/gtk-contained.css \
 	$(gtk322etadir)/gtk-dark.css \
+	$(gtk322etadir)/gtk-contained-dark.css \
 	$(gtk322etadir)/gtk.gresource
 
 gtk322noktodir   = $(srcdir)/gtk-3.22-nokto
@@ -59,13 +67,17 @@ gtk322noktoeta_file = \
 gtk324dir   = $(srcdir)/gtk-3.24
 gtk324_file = \
 	$(gtk324dir)/gtk.css \
+	$(gtk324dir)/gtk-contained.css \
 	$(gtk324dir)/gtk-dark.css \
+	$(gtk324dir)/gtk-contained-dark.css \
 	$(gtk324dir)/gtk.gresource
 
 gtk324etadir   = $(srcdir)/gtk-3.24-eta
 gtk324eta_file = \
 	$(gtk324etadir)/gtk.css \
+	$(gtk324etadir)/gtk-contained.css \
 	$(gtk324etadir)/gtk-dark.css \
+	$(gtk324etadir)/gtk-contained-dark.css \
 	$(gtk324etadir)/gtk.gresource
 
 gtk324noktodir   = $(srcdir)/gtk-3.24-nokto
@@ -459,13 +471,17 @@ gtk2_nokto_toolbar_file = \
 gtk40dir   = $(srcdir)/gtk-4.0
 gtk40_file = \
 	$(gtk40dir)/gtk.css \
+	$(gtk40dir)/gtk-contained.css \
 	$(gtk40dir)/gtk-dark.css \
+	$(gtk40dir)/gtk-contained-dark.css \
 	$(gtk40dir)/gtk.gresource
 
 gtk40etadir   = $(srcdir)/gtk-4.0-eta
 gtk40eta_file = \
 	$(gtk40etadir)/gtk.css \
+	$(gtk40etadir)/gtk-contained.css \
 	$(gtk40etadir)/gtk-dark.css \
+	$(gtk40etadir)/gtk-contained-dark.css \
 	$(gtk40etadir)/gtk.gresource
 
 gtk40noktodir   = $(srcdir)/gtk-4.0-nokto
